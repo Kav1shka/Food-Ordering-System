@@ -14,7 +14,7 @@ const customerSchema=new Schema(
             required:true
         },
         Phone:{
-            type:int,
+            type:Number,
             required:true
         },
         KDU_ID:{
@@ -33,6 +33,6 @@ const customerSchema=new Schema(
     }
 )
 
-const Customer =mongoose.model("Customer", customerSchema);
+const customer =mongoose.model("Customer", customerSchema);
 
-module.exports=Customer;
+module.exports=customer;

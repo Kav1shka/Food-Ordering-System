@@ -14,7 +14,7 @@ const customerSchema=new Schema(
             required:true
         },
         Amount:{
-            type:int,
+            type:Number,
             required:true
         },
         Quantity:{
