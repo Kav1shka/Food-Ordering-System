@@ -7,7 +7,7 @@ const app=express();
 require("dotenv").config();
 //const PORT = 8000;
 
-const PORT= process.env.PORT || 3000;
+const PORT= process.env.PORT || 8010;
 app.use(cors());
  
 //app midddleware  

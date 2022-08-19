@@ -13,8 +13,8 @@ const orderController = {
         address
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
-      const user = await Users.findOne({ email });
-      if (!user)
+      const customer = await customer.findOne({ email });
+      if (!customer)
         return res
           .status(400)
           .json({ message: "wrong email address.Please retry" });

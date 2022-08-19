@@ -9,7 +9,7 @@ router.route("/add").post((req,res)=>{
    const Phone=req.body.Phone;
    const Regi_num=req.body.Regi_num;
 
-   if(!Name|| !)
+  
 
    const newCustomer = new Customer({
       Name,

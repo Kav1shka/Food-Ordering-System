@@ -31,7 +31,8 @@ const customerSchema=new Schema(
 
         },
         password:{
-            type:
+            type:String,
+            required:true
         }
     }
 )
