@@ -1,38 +1,25 @@
-const mongoose=require('mongoose');
+const mongoose = require("mongoose");
 
-const Schema=mongoose.Schema;
+const orderSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    foodName: {
+      type: [],
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-const customerSchema=new Schema(
-    
-    {
-        Order_ID:{ 
-            type:String,
-            required:true
-        },
-        Food_ID:{
-            type:String,
-            required:true
-        },
-        Amount:{
-            type:Number,
-            required:true
-        },
-        Quantity:{
-            type:String,
-            required:true
-        },
-        Gender:{
-            type:String,
-            required:true
-        },
-        Regi_num:{
-            type:String,
-            required:true
-
-        }
-    }
-)
-
-const Customer =mongoose.model("Customer", customerSchema);
-
-module.exports=Customer;
+module.exports = mongoose.model("orderDetails", orderSchema);

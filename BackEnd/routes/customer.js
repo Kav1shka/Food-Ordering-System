@@ -9,6 +9,8 @@ router.route("/add").post((req,res)=>{
    const Phone=req.body.Phone;
    const Regi_num=req.body.Regi_num;
 
+   if(!Name|| !)
+
    const newCustomer = new Customer({
       Name,
       Email,
@@ -43,7 +45,7 @@ router.route("/update/:id").put(async (req, res) => {
     Phone,
     KDU_ID,
     Gender,
-    Regi_num
+    Regi_num 
 
   }
 
