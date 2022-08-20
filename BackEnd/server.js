@@ -35,10 +35,16 @@ err => {
 // connection.once('open',()=>{
     // console.log("Mongodb Connection Success!");
 // })
-
-const customerRouter=require("./routes/customer.js");
+const customerRouter=require("./routes/CustomerRoute.js");
 app.use("/customer",customerRouter);
 
+const FoodrRouter=require("./routes/FoodRoute.js");
+app.use("/products",customerRouter);
+
+const OrderRouter=require("./routes/OrderRoute.js");
+app.use("/orderDetails",customerRouter);
+
+
 app.listen(PORT,()=>{
-    console.log('Server is up and running at port ${PORT}');
+  console.log(`server running at http://localhost:${PORT}`)
 });
