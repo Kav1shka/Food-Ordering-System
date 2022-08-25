@@ -17,6 +17,10 @@ const customerSchema=new Schema(
             type:String,
             required:true
         },
+        isAdmin:{
+            type:Boolean,
+            default:false
+        }, 
         KDU_ID:{
             type:String,
             required:true
@@ -24,11 +28,6 @@ const customerSchema=new Schema(
         Gender:{
             type:String,
             required:true
-        },
-        Regi_num:{
-            type:String,
-            required:true
-
         },
         password:{
             type:String,

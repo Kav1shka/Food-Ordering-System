@@ -13,7 +13,7 @@ app.use(cors());
 //app midddleware  
 app.use(bodyParser.json());
 
-const Customer=require('./routes/customer');
+//const Customer=require('./routes/customer');
 
 
 //const DB_URL='mongodb+srv://kavishka:tj497yudqT51BiiT@cluster0.po8zq.mongodb.net/?retryWrites=true&w=majority';
@@ -39,10 +39,10 @@ const customerRouter=require("./routes/CustomerRoute.js");
 app.use("/customer",customerRouter);
 
 const FoodrRouter=require("./routes/FoodRoute.js");
-app.use("/products",customerRouter);
+app.use("/products",FoodrRouter);
 
 const OrderRouter=require("./routes/OrderRoute.js");
-app.use("/orderDetails",customerRouter);
+app.use("/orderDetails",OrderRouter);
 
 
 app.listen(PORT,()=>{

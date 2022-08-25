@@ -1,5 +1,5 @@
 import express from "express";
-import expressAsyncHandler from "express-async-handler";
+import expressAsyncHandler from "express-async-handler"; 
 import nodemailer from 'nodemailer'
 import {google} from 'googleapis'
 import Order from "../models/order.js";
@@ -63,7 +63,7 @@ orderRouter.post('/',isAuth,expressAsyncHandler(async(req,res)=>{
 
    // send mail with defined transport object
    let info = await  transporter.sendMail({
-    from: 'jaydeepshelake2001@gmail.com', // sender address
+    from: 'kavishkanilan56@gmail.com', // sender address
     to: order.email, // list of receivers
     subject: "Order placed Successfuly🎉",
     text: "Hello world?", // Subject line
@@ -79,6 +79,7 @@ res.status(201).send({message:'Order Placed !',order:order})
 
  }
 }))
+
 
 orderRouter.get('/:id',isAuth,expressAsyncHandler(async(req,res)=>{
     const {id} = req.params;
