@@ -44,6 +44,10 @@ app.use("/products",FoodrRouter);
 const OrderRouter=require("./routes/OrderRoute.js");
 app.use("/orderDetails",OrderRouter);
 
+const AauthenticationRouter=require("./routes/AuthRoute.js");
+app.use("/orderDetails",AauthenticationRouter);
+
+
 
 app.listen(PORT,()=>{
   console.log(`server running at http://localhost:${PORT}`)

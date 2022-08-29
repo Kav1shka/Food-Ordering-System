@@ -17,15 +17,7 @@ const customerSchema=new Schema(
             type:String,
             required:true
         },
-        isAdmin:{
-            type:Boolean,
-            default:false
-        }, 
         KDU_ID:{
-            type:String,
-            required:true
-        },
-        Gender:{
             type:String,
             required:true
         },

@@ -1,3 +1,17 @@
+const express = require("express");
+const foodController = require("../controllers/foodController");
+const adminAuthMiddleware = require("../middlewares/authMiddleware");
+const router = express.Router();
+
+router.post("/food/new", adminAuthMiddleware, foodController.addFood);
+router.get("/foods", foodController.getAllFoods);
+router.get("/food/:id", foodController.getFoodDetails);
+router.put("/food/:id", adminAuthMiddleware, foodController.updateFood);
+router.delete("/food/:id", adminAuthMiddleware, foodController.deleteFood);
+
+module.exports = router;
+
+
 /*const customer = require("../models/customer.js");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -62,6 +76,7 @@ const authController = {
 
 module.exports = authController;
 */
+/*
 let express =require( "express");
 let expressAsyncHandler =require("express-async-handler");
 let Product =require("../models/products.js");
@@ -136,3 +151,4 @@ productRouter.get('/:id',expressAsyncHandler(async(req,res)=>{
 
 
 export default productRouter
+*/

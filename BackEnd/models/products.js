@@ -1,3 +1,5 @@
+import { boolean } from "yargs";
+
 const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema(
@@ -35,7 +37,7 @@ const foodSchema = new mongoose.Schema(
       required: true,
   },
   countInStock:{
-    type:Number,
+    type:boolean,
     required:true
   }
   },{ timestamps: true }

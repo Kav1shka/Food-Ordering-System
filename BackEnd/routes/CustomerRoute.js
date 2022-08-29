@@ -1,3 +1,13 @@
+const express = require("express");
+const adminAuthMiddleware = require("../middlewares/AuthenticationMiddleWare.js");
+const customerController = require("../controllers/customerController.js");
+const router = express.Router();
+
+router.get("/users", userController.getAllUser);
+router.delete("/user/:id", userController.deleteUser);
+
+module.exports = router;
+
 /*const router = require("express").Router();
 let Customer = require("../models/customer");
 
@@ -83,13 +93,14 @@ router.route("/get/:id").get(async (req, res) => {
 
 module.exports = router;
 */
-
+/*
 let express = require("express");
 //import data from "../data.js";
 let Customer =require("../models/customer");
 let  bcrypt=require("bcrypt");
 let  expressAsyncHandler = require("express-async-handler");
-let x=require(genrateToken, isAuth , "../utlis.js");
+const yargs = require("yargs");
+const {genrateToken, isAuth }=require('../utlis.js');
 
 const customerRouter = express.Router();
 
@@ -103,7 +114,7 @@ expressAsyncHandler(async(req,res)=>{
 );
 
 // post request for signining users
-customerRouter.post('/signin',expressAsyncHandler(async(req,res)=>{
+customerRouter.post('/log_in',expressAsyncHandler(async(req,res)=>{
  const customer= await Customer.findOne({email:req.body.email})
  if(customer){
          if(bcrypt.compareSync(req.body.password,user.password)){ // if password mateches
@@ -224,4 +235,5 @@ const user = await User.findById(req.user._id)
 }))
 */
 
-export default userRouter
+// module.exports=customerRouter;
+

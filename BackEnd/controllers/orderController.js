@@ -5,20 +5,22 @@ const { makeOrderErrorHandler } = require("../utils/errorHandler");
 const orderController = {
   makeOrder: async (req, res) => {
     try {
-      const { name, email, foodName, address } = req.body;
+      const { CustomerName, Email, foodName, KDU_ID,CustomerType ,foodCode } = req.body;
       const errorMessage = makeOrderErrorHandler(
-        name,
-        email,
+        CustomerName,
+        Email,
         foodName,
-        address
+        KDU_ID,
+        CustomerType,
+        foodCode
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
-      const customer = await customer.findOne({ email });
+      const customer = await customer.findOne({ Email });
       if (!customer)
         return res
           .status(400)
           .json({ message: "wrong email address.Please retry" });
-      await new Orders({ name, email, foodName, address }).save();
+      await new Orders({ CustomerName, Email, foodName, KDU_ID,CustomerType,foodCode }).save();
       res.status(201).json({
         message: "You have successfully placed order",
       });
@@ -38,7 +40,7 @@ const orderController = {
     try {
       let order = await Orders.findById(req.params.id);
       await order.remove();
-      res.status(200).json({ message: "Successfully delivered" });
+      res.status(200).json({ message: "Successfully Deleted!!" });
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
