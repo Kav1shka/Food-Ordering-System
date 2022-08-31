@@ -1,10 +1,10 @@
-const express = require("express");
+const express = require("xpress");
 const adminAuthMiddleware = require("../middlewares/AuthenticationMiddleWare.js");
 const customerController = require("../controllers/customerController.js");
 const router = express.Router();
 
-router.get("/users", userController.getAllUser);
-router.delete("/user/:id", userController.deleteUser);
+router.get("/users", customerController.getAllCustomer);
+router.delete("/user/:id", customerController.deleteCustomer);
 
 module.exports = router;
 

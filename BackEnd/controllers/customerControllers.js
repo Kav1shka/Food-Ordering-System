@@ -1,7 +1,7 @@
 const Customer = require("../models/customer.js");
 
-const userController = {
-  getAllUser: async (req, res) => {
+const customerController = {
+  getAllCustomer: async (req, res) => {
     try {
       const customer = await Customer.find();
       res.status(200).json({ customer });
@@ -9,13 +9,13 @@ const userController = {
       res.status(500).json({ message: error.message });
     }
   },
-  deleteUser: async (req, res) => {
+  deleteCustomer: async (req, res) => {
     let customer = await customer.findById(req.params.id);
     if (!customer) {
-      return res.status(400).json({ message: "user does not exist" });
+      return res.status(400).json({ message: "customer does not exist" });
     }
     await customer.remove();
-    res.status(200).json({ message: "This user has been deleted" });
+    res.status(200).json({ message: "This customer has been deleted" });
   },
 };
 

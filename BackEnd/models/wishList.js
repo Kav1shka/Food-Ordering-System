@@ -29,7 +29,7 @@ const wishListSchema = new moongoose.Schema({
 
     customerID:{   
         type:moongoose.Schema.Types.ObjectId,
-        ref:'User',
+        ref:'customer',
         required:true
     },
     

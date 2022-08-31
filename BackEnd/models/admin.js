@@ -1,4 +1,5 @@
 const mongoose=require('mongoose');
+const { number } = require('yargs');
 
 const Schema=mongoose.Schema;
 
@@ -14,14 +15,10 @@ const AdminSchema=new Schema(
             required:true
         },
         Phone:{
-            type:int,
+            type:Number,
             required:true
         },
         KDU_ID:{
-            type:String,
-            required:true
-        },
-        Gender:{
             type:String,
             required:true
         }

@@ -1,4 +1,4 @@
-const Customer = require("../models/customer");
+const Customer = require("../models/customer.js");
 const jwt = require("jsonwebtoken");
 
 const adminAuthMiddleware = async (req, res, next) => {
