@@ -1,18 +1,18 @@
-const Foods = require("../models/products");
-const { addFoodErrorHandler } = require("../utils/errorHandler");
+const Foods = require("../models/products.js");
+const { addFoodErrorHandler } = require("../validations.js");
 
 const foodController = {
   addFood: async (req, res) => {
     try {
-      const { name, category, cost, description, image,rating,countInStock} = req.body;
+      const { name, category, cost, description, image,InStock} = req.body;
       const errorMessage = addFoodErrorHandler(
         name,
         category,
         cost,
         description,
         image,
-        rating,
-        countInStock
+       // rating,
+        InStock
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const food = await new Foods({
@@ -21,8 +21,7 @@ const foodController = {
         cost,
         description,
         image,
-        rating,
-        countInStock
+        InStock
       }).save();
       res.status(201).json({ message: "Successfully added new food", food });
     } catch (error) {
@@ -74,4 +73,4 @@ const foodController = {
   },
 };
 
-module.exports = foodController;
+module.exports =  foodController;

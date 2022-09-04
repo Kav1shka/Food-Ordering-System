@@ -3,7 +3,7 @@ const Customer = require("../models/customer.js");
 const customerController = {
   getAllCustomer: async (req, res) => {
     try {
-      const customer = await Customer.find();
+      const customer = await find();
       res.status(200).json({ customer });
     } catch (error) {
       res.status(500).json({ message: error.message });
@@ -19,4 +19,6 @@ const customerController = {
   },
 };
 
-module.exports = customerController;
+module.exports =  customerController;
+//export default customerController;
+

@@ -41,4 +41,4 @@ const wishListSchema = new moongoose.Schema({
     
 })
 const Wishlist= moongoose.model('Wishlist',wishListSchema)
-export default Wishlist;
+module.exports=Wishlist;

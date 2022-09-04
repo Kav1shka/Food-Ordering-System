@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "food ordering system",
   "main": "index.js",
+ 
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "type": "module"
   },
   "author": "SPMUKN De Alwis",
   "license": "ISC",

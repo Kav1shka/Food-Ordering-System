@@ -1,31 +1,28 @@
-const Customer = require("../models/customer.js");
+const Customer = require("../models/customer");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {
-   registerValid, 
-   loginValid
-   } = require("../utils/errorHandler");
-//const customer = require("../models/customer");
+const { registerValid, loginValid } = require("../validations.js");
 
 const authController = {
   register: async (req, res) => {
     try {
-      const { Name, Email, password, KDU_ID,Phone } = req.body;
-      const errorMessage = registerValid(Name, Email, password, KDU_ID,Phone);
+      const { Name, Email, password,cf_password, KDU_ID,Phone } = req.body;
+      const errorMessage = registerValid(Name, Email, KDU_ID,Phone, password,cf_password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
-      const CustomerExists = await Customer.findOne({ Email });
+      const CustomerExists = await findOne({ Email });
       if (CustomerExists) {
         return res
           .status(400)
           .json({ message: "This email is already in use!!!!" });
       }
-      const hashedPassword = await bcrypt.hash(password, 12);
+      const hashedPassword = await hash(password, 12);
       await new Customer({
         Name,
         Email,
-        password: hashedPassword,
         KDU_ID,
-        Phone
+        Phone,
+        password: hashedPassword,
+        
         
       }).save();
       res.status(201).json({
@@ -41,15 +38,15 @@ const authController = {
       const errorMessage = loginValid(Email, password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
 
-      const customer = await Customer.findOne({ Email });
+      const customer = await findOne({ Email });
       if (!customer)
         return res.status(400).json({ message: "Invalid email or password" });
 
-      const match = await bcrypt.compare(password, customer.password);
+      const match = await compare(password, customer.password);
       if (!match)
         return res.status(400).json({ message: "Invalid email or password" });
 
-      const token = await jwt.sign({ _id: customer._id }, process.env.JWT_SECRET, {
+      const token = await sign({ _id: customer._id }, process.env.JWT_SECRET, {
         expiresIn: "7d",
       });
 
@@ -64,3 +61,4 @@ const authController = {
 };
 
 module.exports = authController;
+ 

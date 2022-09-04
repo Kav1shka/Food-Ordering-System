@@ -1,10 +1,12 @@
-const express = require("xpress");
-const adminAuthMiddleware = require("../middlewares/AuthenticationMiddleWare.js");
-const customerController = require("../controllers/customerController.js");
+const express=require("express");
 const router = express.Router();
+const customerController =require( "../controllers/customerControllers.js");
+const adminAuthMiddleware = require("../validations.js");
 
-router.get("/users", customerController.getAllCustomer);
-router.delete("/user/:id", customerController.deleteCustomer);
+
+
+router.get("/Customers", customerController.getAllCustomer);
+router.delete("/Customer/:id", customerController.deleteCustomer);
 
 module.exports = router;
 

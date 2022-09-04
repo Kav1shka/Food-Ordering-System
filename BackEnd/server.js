@@ -35,17 +35,17 @@ err => {
 // connection.once('open',()=>{
     // console.log("Mongodb Connection Success!");
 // })
-const customerRouter=require("./routes/CustomerRoute.js");
-app.use("/customer",customerRouter);
+const customerRouter=require("./routes/CustomerRoute");
+app.use("/API/customer",customerRouter);
 
-const FoodrRouter=require("./routes/FoodRoute.js");
-app.use("/products",FoodrRouter);
+const FoodrRouter=require("./routes/FoodRoute");
+app.use("/API/products",FoodrRouter);
 
-const OrderRouter=require("./routes/OrderRoute.js");
-app.use("/orderDetails",OrderRouter);
+const OrderRouter=require("./routes/OrderRoute");
+app.use("/API/orderDetails",OrderRouter);
 
-const AauthenticationRouter=require("./routes/AuthRoute.js");
-app.use("/orderDetails",AauthenticationRouter);
+const AauthenticationRouter=require("./routes/AuthRoute");
+app.use("/API/customer",AauthenticationRouter);
 
 
 

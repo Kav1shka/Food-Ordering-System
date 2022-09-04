@@ -1,4 +1,3 @@
-import { boolean } from "yargs";
 
 const mongoose = require("mongoose");
 
@@ -36,12 +35,11 @@ const foodSchema = new mongoose.Schema(
       type: String,
       required: true,
   },
-  countInStock:{
-    type:boolean,
+  InStock:{
+    type:String,
     required:true
   }
   },{ timestamps: true }
 );
 
 module.exports = mongoose.model("products", foodSchema);
-export default products;
