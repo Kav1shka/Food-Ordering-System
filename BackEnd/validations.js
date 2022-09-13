@@ -1,5 +1,6 @@
 
-const registerValid = (Name,KDU_ID,Phone,Email, password, cf_password) => {
+const registerValid = (Name, Email, password,cf_password, KDU_ID,Phone) => {
+  
     if (!Name) return "Please enter your name";
     if (!KDU_ID) return "Please enter your KDU_ID";
     if (!Phone) return "Please enter your mobile number";
@@ -24,8 +25,8 @@ const registerValid = (Name,KDU_ID,Phone,Email, password, cf_password) => {
     if (!cost) return "Please enter food cost";
     if (!description) return "Please enter food description";
     if (!image) return "Please add food image";
-    //if (!description) return "Please enter rating of food ";
-    if (!image) return "Please add food image";
+    if (!description) return "Please enter rating of food ";
+   // if (!image) return "Please add food image";
   };
   
   const makeOrderErrorHandler = (CustomerName, Email, foodName, KDU_ID,CustomerType ,foodCode) => {

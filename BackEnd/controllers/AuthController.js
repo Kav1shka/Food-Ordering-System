@@ -7,7 +7,7 @@ const authController = {
   register: async (req, res) => {
     try {
       const { Name, Email, password,cf_password, KDU_ID,Phone } = req.body;
-      const errorMessage = registerValid(Name, Email, KDU_ID,Phone, password,cf_password);
+      const errorMessage = registerValid(Name, Email, password,cf_password, KDU_ID,Phone);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const CustomerExists = await findOne({ Email });
       if (CustomerExists) {

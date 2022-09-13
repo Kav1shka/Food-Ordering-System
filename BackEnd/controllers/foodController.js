@@ -9,7 +9,7 @@ const foodController = {
         name,
         category,
         cost,
-        description,
+        description, 
         image,
        // rating,
         InStock

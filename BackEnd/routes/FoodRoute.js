@@ -10,4 +10,4 @@ router.get("/food/:id", getFoodDetails);
 router.put("/food/:id", adminAuthMiddleware, updateFood);
 router.delete("/food/:id", adminAuthMiddleware, deleteFood);
 
-module.exports= router;
+module.exports= router;     
