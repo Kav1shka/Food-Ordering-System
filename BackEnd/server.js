@@ -35,7 +35,8 @@ app.use(bodyParser.json());
 // connection.once('open',()=>{
     // console.log("Mongodb Connection Success!");
 // })
-const uri  = "mongodb+srv://KavishkaNilan:Kavi123456789@foodorderingsystem.aidyusg.mongodb.net/test";
+
+const uri  = "mongodb+srv://Kavishka28:Kavishka28@foodorderingsystem.aidyusg.mongodb.net/test";
 
 mongoose.connect(uri,
     err => {

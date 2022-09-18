@@ -6,22 +6,28 @@ const { registerValid, loginValid } = require("../validations.js");
 const authController = {
   register: async (req, res) => {
     try {
-      const { Name, Email, password,cf_password, KDU_ID,Phone } = req.body;
+      const  Name= req.body.Name;
+      const  Email=req.body.Email;
+      const  password=req.body.password;
+      const  cf_password= req.body.cf_password;
+      const   KDU_ID=req.body.KDU_ID;
+      const  Phone = req.body.Phone;
       const errorMessage = registerValid(Name, Email, password,cf_password, KDU_ID,Phone);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
-      const CustomerExists = await findOne({ Email });
-      if (CustomerExists) {
-        return res
-          .status(400)
-          .json({ message: "This email is already in use!!!!" });
-      }
-      const hashedPassword = await hash(password, 12);
+      // const CustomerExists = await customers.findOne({ Email });
+      // if (CustomerExists) {
+      //   return res
+      //     .status(400)
+      //     .json({ message: "This email is already in use!!!!" });
+      // }
+     // const hashedPassword = await hash(password, 100);
       await new Customer({
         Name,
         Email,
         KDU_ID,
         Phone,
-        password: hashedPassword,
+        //password: hashedPassword,
+        password
         
         
       }).save();
@@ -29,6 +35,7 @@ const authController = {
         message: "You have successfully registered. Please login now",
       });
     } catch (error) {
+      console.log(error)
       res.status(500).json({ message: error.message });
     }
   },
