@@ -4,9 +4,9 @@ const { addFood, getAllFoods, getFoodDetails, updateFood, deleteFood } =require(
 const adminAuthMiddleware =require( "../middlewares/AuthenticationMiddleWare.js");
 
 
-router.post("/food/new", adminAuthMiddleware, addFood);
+router.post("/food/new",  adminAuthMiddleware, addFood);
 router.get("/foods", getAllFoods);
-router.get("/food/:id", getFoodDetails);
+router.get("/food/_id", getFoodDetails);
 router.put("/food/:id", adminAuthMiddleware, updateFood);
 router.delete("/food/:id", adminAuthMiddleware, deleteFood);
 

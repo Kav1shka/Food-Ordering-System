@@ -5,7 +5,7 @@ const foodSchema = new mongoose.Schema(
 {
   productID: {
     type: String,
-    required: true,
+   // required: true,
   },
   name: {
       type: String,
@@ -21,7 +21,7 @@ const foodSchema = new mongoose.Schema(
     },
   rating:{
       type: String,
-      required: true,
+     // required: true,
     },
   description: {
       type: String,
@@ -29,11 +29,11 @@ const foodSchema = new mongoose.Schema(
     },
   type:{
       type:String,
-      required:true,
+      //required:true,
   },
   price:{
       type:Number,
-      required:true,
+      //required:true,
   },
   image:{
       type: String,
@@ -41,7 +41,7 @@ const foodSchema = new mongoose.Schema(
   },
   InStock:{
     type:String,
-    required:true
+   // required:true
   }
   },{ timestamps: true }
 );

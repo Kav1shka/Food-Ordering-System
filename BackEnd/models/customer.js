@@ -22,6 +22,10 @@ const customerSchema=new mongoose.Schema(
         password:{
             type:String,
             required:true
+        },
+        cf_password:{
+            type:String,
+            required:true
         }
     }
 )
