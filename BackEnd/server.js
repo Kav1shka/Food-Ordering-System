@@ -2,6 +2,9 @@ const express=require("express");
 const mongoose=require("mongoose");
 const bodyParser=require("body-parser");
 const cors=require("cors");
+const users =require("./routes/users.js");
+const passport = require("passport");
+
 
 const dotenv=require("dotenv");
 dotenv.config();
@@ -39,13 +42,16 @@ app.use(bodyParser.json());
     // console.log("Mongodb Connection Success!");
 // })
 
-const uri  = "mongodb+srv://Kavishka28:Kavishka28@foodorderingsystem.aidyusg.mongodb.net/test";
+const url  = "mongodb+srv://Kavishka28:Kavishka28@foodorderingsystem.aidyusg.mongodb.net/test";
 
-mongoose.connect(uri,
+mongoose.connect(url,
     err => {
         if(err) throw err;
         console.log('MongoDB is connected...')
     });
+
+app.use(passport.initialize());
+require("./config/passport")(passport);
 
 const customerRouter=require("./routes/CustomerRoute");
 app.use("/customer",customerRouter);
@@ -58,6 +64,9 @@ app.use("/orderDetails",OrderRouter);
 
 const AauthenticationRouter=require("./routes/AuthRoute");
 app.use("/customer",AauthenticationRouter);
+
+app.use("/users", users)
+
 
 const CartRouter=require("./routes/CartRoute");
 app.use("/cart",CartRouter);
