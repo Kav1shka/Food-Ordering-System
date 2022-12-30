@@ -7,6 +7,7 @@ module.exports.get_cart_items = async (req,res) => {
         let cart = await Cart.findOne({CustomerId});
         if(cart && cart.items.length>0){
             res.send(cart);
+            res.send("success!!")
         }
         else{
             res.send(null);
@@ -85,3 +86,4 @@ module.exports.delete_item = async (req,res) => {
         res.status(500).send("Something went wrong");
     }
 }
+

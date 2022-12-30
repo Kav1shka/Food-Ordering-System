@@ -59,7 +59,8 @@ app.use("/orderDetails",OrderRouter);
 const AauthenticationRouter=require("./routes/AuthRoute");
 app.use("/customer",AauthenticationRouter);
 
-
+const CartRouter=require("./routes/CartRoute");
+app.use("/cart",CartRouter);
 
 app.listen(PORT,()=>{
   console.log(`server running at http://localhost:${PORT}`)

@@ -1,4 +1,4 @@
-import moongoose from 'mongoose'
+const moongoose =require("mongoose");
 
 const wishListSchema = new moongoose.Schema({
     name:{
@@ -26,6 +26,12 @@ const wishListSchema = new moongoose.Schema({
         type:String,
         required:true,
     },
+    
+    Quantity:{
+        type:Number,
+        required:true,
+    },
+
 
     customerID:{   
         type:moongoose.Schema.Types.ObjectId,
