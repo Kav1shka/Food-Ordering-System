@@ -27,14 +27,43 @@ const foodController = {
     }
   },
   
-  getAllFoods: async (req, res) => {
+  getAllFoods_Mains: async (req, res) => {
     try {
-      const foods = await Foods.find();
+      const foods = await Foods.find({"category":{"$regex":"mains"}});
       res.status(200).json({ foods });
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
   },
+
+  getAllFoods_Pastry: async (req, res) => {
+    try {
+      const foods = await Foods.find({"category":{"$regex":"pastry"}});
+      res.status(200).json({ foods });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+
+  getAllFoods_Dessert: async (req, res) => {
+    try {
+      const foods = await Foods.find({"category":{"$regex":"dessert"}});
+      res.status(200).json({ foods });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+
+  getAllFoods_Drinks: async (req, res) => {
+    try {
+      const foods = await Foods.find({"category":{"$regex":"drinks"}});
+      res.status(200).json({ foods });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+ 
+
   getFoodDetails: async (req, res) => {
     try {
       const food = await Foods.findById(req.params.id);
