@@ -26,6 +26,16 @@ const foodController = {
       return res.status(500).json({ message: error.message });
     }
   },
+
+  getAllFoods: async (req, res) => {
+    try {
+      const foods = await Foods.find();
+      res.status(200).json({ foods });
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  },
+
   
   getAllFoods_Mains: async (req, res) => {
     try {
