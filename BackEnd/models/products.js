@@ -5,7 +5,7 @@ const foodSchema = new mongoose.Schema(
 {
   productID: {
     type: String,
-   required: true,
+  //  required: true,
   },
   name: {
       type: String,
@@ -37,7 +37,7 @@ const foodSchema = new mongoose.Schema(
   },
   image:{
       type: String,
-      required: true,
+      // required: true,
   },
   InStock:{
     type:String,

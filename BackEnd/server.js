@@ -11,6 +11,7 @@ dotenv.config();
 
 const app=express();
 
+mongoose.set("strictQuery", false);
 //const PORT = 8000;
 
 const PORT= process.env.PORT || 8000;

@@ -5,14 +5,20 @@ const { makeOrderErrorHandler } = require("../validations.js");
 const orderController = {
   makeOrder: async (req, res) => {
     try {
-      const { CustomerName, Email, foodName, KDU_ID,CustomerType ,foodCode } = req.body;
+      const { CustomerName, Email, foodName, KDU_ID,CustomerType ,quantity,paymentMethod,isPaid,paidAt,totalprice} = req.body;
       const errorMessage = makeOrderErrorHandler(
         CustomerName,
+        KDU_ID,
         Email,
         foodName,
-        KDU_ID,
         CustomerType,
-        foodCode
+        // foodCode,
+        totalprice,
+        quantity,
+        paymentMethod,
+        isPaid,
+        paidAt
+       
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const customer = await Customer.findOne({ Email });
@@ -20,7 +26,7 @@ const orderController = {
         return res
           .status(400)
           .json({ message: "wrong email address.Please retry" });
-      await new Orders({ CustomerName, Email, foodName, KDU_ID,CustomerType,foodCode }).save();
+      await new Orders({ CustomerName, Email, foodName, KDU_ID,CustomerType ,quantity,paymentMethod,isPaid,paidAt,totalprice }).save();
       res.status(201).json({
         message: "You have successfully placed order",
       });

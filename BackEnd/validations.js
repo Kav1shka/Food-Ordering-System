@@ -74,13 +74,13 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
    // if (!image) return "Please add food image";
   };
   
-  const makeOrderErrorHandler = (CustomerName, Email, foodName, KDU_ID,CustomerType ,foodCode) => {
+  const makeOrderErrorHandler = (CustomerName, Email, foodName, KDU_ID,CustomerType) => {
     if (CustomerName==null) return "Please enter your name";
     if (Email==null) return "Please enter your email";
     if (foodName==null) return "Food name reuired";
     if (KDU_ID==null) return "Please enter your KDU ID";
     if (CustomerType==null) return "enter customer type";
-    if (foodCode==null) return "Please enter foodcode";
+    // if (foodCode==null) return "Please enter foodcode";
 
   };
   

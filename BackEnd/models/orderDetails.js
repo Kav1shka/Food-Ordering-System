@@ -12,7 +12,7 @@ const orderSchema = new mongoose.Schema(
       required:true,
     },
 
-    email: {
+    Email: {
       type: String,
       required: true,
     },
@@ -22,15 +22,15 @@ const orderSchema = new mongoose.Schema(
       required: true,
     },
 
-    foodCode:{
+    KDU_ID:{
       type:String,
       required:true,
     },
 
-    Faculty: {
-      type: String,
-      required: true,
-    },
+    // Faculty: {
+    //   type: String,
+    //   required: true,
+    // },
 
     paymentMethod:
     {type:String,
@@ -39,7 +39,7 @@ const orderSchema = new mongoose.Schema(
 
     itemsPrice:{
       type:Number,
-      required:true
+      // required:true
     },
 
     totalprice:{
@@ -65,6 +65,7 @@ const orderSchema = new mongoose.Schema(
     paymentId:{
        type:String,
     },
+ 
   },
   { timestamps: true }
 );
