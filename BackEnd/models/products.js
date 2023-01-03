@@ -3,9 +3,8 @@ const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema(
 {
-  productID: {
+  image_URL: {
     type: String,
-  //  required: true,
   },
   name: {
       type: String,
