@@ -69,17 +69,16 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
     if (category===null) return "Please enter food category";
     if (cost===null) return "Please enter food cost";
     if (description===null) return "Please enter food description";
-    if (InStock===null) return "Please add food Instock or Not";
   
    // if (!image) return "Please add food image";
   };
   
   const makeOrderErrorHandler = (CustomerName, Email, foodName, KDU_ID,CustomerType) => {
-    if (CustomerName==null) return "Please enter your name";
-    if (Email==null) return "Please enter your email";
-    if (foodName==null) return "Food name reuired";
-    if (KDU_ID==null) return "Please enter your KDU ID";
-    if (CustomerType==null) return "enter customer type";
+    if (CustomerName===null) return "Please enter your name";
+    if (Email===null) return "Please enter your email";
+    if (foodName===null) return "Food name reuired";
+    if (KDU_ID===null) return "Please enter your KDU ID";
+    if (CustomerType===null) return "enter customer type";
     // if (foodCode==null) return "Please enter foodcode";
 
   };

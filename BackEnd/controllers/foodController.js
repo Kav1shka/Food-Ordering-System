@@ -11,7 +11,6 @@ const foodController = {
         category,
         cost,
         description, 
-        InStock
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
       const food = await new Foods({
@@ -19,7 +18,6 @@ const foodController = {
         category,
         cost,
         description,
-        InStock
       }).save();
       res.status(201).json({ message: "Successfully added new food", food });
     } catch (error) {

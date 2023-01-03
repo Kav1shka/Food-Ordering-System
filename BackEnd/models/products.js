@@ -18,31 +18,14 @@ const foodSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-  rating:{
-      type: String,
-     // required: true,
-    },
+
   description: {
       type: String,
       required: true,
     },
-  type:{
-      type:String,
-      //required:true,
+
   },
-  price:{
-      type:Number,
-      //required:true,
-  },
-  image:{
-      type: String,
-      // required: true,
-  },
-  InStock:{
-    type:String,
-   // required:true
-  }
-  },{ timestamps: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("products", foodSchema);
