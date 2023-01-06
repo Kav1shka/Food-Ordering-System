@@ -64,7 +64,7 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
     if (password=== null) return "Please enter your password";
   };
   
-  const addFoodErrorHandler = (name, category, cost, description, InStock) =>{
+  const addFoodErrorHandler = (name, category, cost, description) =>{
     if (name===null) return "Please enter food name";
     if (category===null) return "Please enter food category";
     if (cost===null) return "Please enter food cost";

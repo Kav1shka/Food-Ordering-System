@@ -1,10 +1,11 @@
-
+const cloudinary=require("cloudinary");
 const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema(
 {
   image_URL: {
     type: String,
+    required: true,
   },
   name: {
       type: String,
