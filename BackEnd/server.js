@@ -45,7 +45,7 @@ app.use(bodyParser.json());
 
 const url  = "mongodb+srv://Kavishka28:Kavishka28@foodorderingsystem.aidyusg.mongodb.net/test";
 
-const CLOUDINARY_URL='cloudinary://955612828956314:0phn-D7W7PlckD2ENN4t8d-haA8@dxoyfttuj';
+// const CLOUDINARY_URL='cloudinary://955612828956314:0phn-D7W7PlckD2ENN4t8d-haA8@dxoyfttuj';
 mongoose.connect(url,
     err => {
         if(err) throw err;
