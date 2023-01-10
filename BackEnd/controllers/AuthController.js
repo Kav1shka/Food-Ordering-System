@@ -28,7 +28,7 @@ const authController = {
         Phone,
         Email,
         password: hashedPassword,
-        cf_password
+        cf_password:hashedPassword
 
       }).save();
       res.status(201).json({
