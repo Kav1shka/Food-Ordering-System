@@ -28,6 +28,8 @@ const authController = {
         Phone,
         Email,
         password: hashedPassword,
+        cf_password
+
       }).save();
       res.status(201).json({
         message: "You have successfully registered. Please login now",
