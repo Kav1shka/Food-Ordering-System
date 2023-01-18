@@ -24,7 +24,7 @@ const uploadImage = async (image_URL) => {
 
     try {
       // Upload the image
-      const result = await cloudinary.uploader.upload(image_URL,CLOUDINARY_URL, options);
+      const result = await cloudinary.uploader.upload(image_URL, options);
       console.log(result);
       return result.public_id;
     } catch (error) {

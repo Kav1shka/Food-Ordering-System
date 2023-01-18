@@ -46,12 +46,15 @@ const authController = {
       const errorMessage = loginValid(Email, password);
       if (errorMessage) return res.status(400).json({ message: errorMessage });
 
-      const customer =  Customer.findOne({ Email });
+      const customer = await Customer.findOne({ Email });
+
 
       if (!customer)
         return res.status(400).json({ message: "Not registered email" });
         
-      const match =  bcrypt.compare(password, customer.password);
+      const match = await bcrypt.compare(password, customer.password);
+     
+      console.log(match)
       if (!match){
         return res.status(400).json({ message: "Invalid email or password" });
 

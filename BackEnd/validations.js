@@ -3,16 +3,16 @@
 
 const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
   
-  if (Name===null)
+  if (!Name)
     return "Please enter your name";
-  if (KDU_ID===null) return "Please enter your KDU_ID";
-  if (Phone===null) return "Please enter your mobile number";
-  if (Email===null) return "Please enter your email address";
+  if (!KDU_ID) return "Please enter your KDU_ID";
+  if (!Phone) return "Please enter your mobile number";
+  if (!Email) return "Please enter your email address";
   //if (!validateEmail(Email)) return "Please enter valid email";
-  if (password===null) return "Please enter new password";
+  if (!password) return "Please enter new password";
   // if (password.length < 10)
   //   return "Password should contain atleast 10 characters";
-  if (cf_password===null) return "Please retype your password to confirm";
+  if (!cf_password) return "Please retype your password to confirm";
   if (password !==cf_password)
     return "Passwords does not match. Please try again";
 };
@@ -60,8 +60,8 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
 // };
   
   const loginValid = (Email, password) =>{
-    if (Email=== null) return "Please enter your email";
-    if (password=== null) return "Please enter your password";
+    if (!Email) return "Please enter your email";
+    if (!password) return "Please enter your password";
   };
   
   const addFoodErrorHandler = (name, category, cost, description) =>{
