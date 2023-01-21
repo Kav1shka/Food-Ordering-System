@@ -1,6 +1,7 @@
 const Orders = require("../models/orderDetails.js");
 const Customer = require("../models/customer.js");
 const { makeOrderErrorHandler } = require("../validations.js");
+const { findById } = require("../models/customer.js");
 
 const orderController = {
   makeOrder: async (req, res) => {
@@ -36,7 +37,7 @@ const orderController = {
   },
   getAllOrders: async (req, res) => {
     try {
-      const orders = await find();
+      const orders = await Orders. find();
       res.status(200).json({ orders });
     } catch (error) {
       return res.status(500).json({ message: error.message });

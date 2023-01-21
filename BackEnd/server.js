@@ -69,6 +69,9 @@ app.use("/customer",AauthenticationRouter);
 
 app.use("/users", users)
 
+const FeedbackRouter=require("./routes/feedbackRoute");
+app.use("/feedback",FeedbackRouter);
+
 
 const CartRouter=require("./routes/CartRoute");
 app.use("/cart",CartRouter);

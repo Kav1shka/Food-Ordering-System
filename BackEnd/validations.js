@@ -63,7 +63,12 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
     if (!Email) return "Please enter your email";
     if (!password) return "Please enter your password";
   };
+  const feedbackValid = (fbMessage) =>{
+    if (!fbMessage) return "Please enter your feedback";
+   
+  };
   
+
   const addFoodErrorHandler = (name, category, cost, description) =>{
     if (!name) return "Please enter food name";
     if (!category) return "Please enter food category";
@@ -94,6 +99,7 @@ const registerValid = (Name,KDU_ID,Phone, Email, password,cf_password)=>{
     loginValid,
     addFoodErrorHandler,
     makeOrderErrorHandler,
+    feedbackValid
   };
 
 
