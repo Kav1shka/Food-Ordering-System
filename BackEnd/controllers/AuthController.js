@@ -48,7 +48,7 @@ const authController = {
 
       const customer = await Customer.findOne({ Email });
 
-
+     const details=await Customer.findOne(customer);
       if (!customer)
         return res.status(400).json({ message: "Not registered email" });
         
@@ -65,7 +65,11 @@ const authController = {
       });
 
       Customer.password = undefined;
-      res.status(200).json({ message: "You have successfully logged in", Customer, token });
+      
+      // Customer.password = undefined;
+      // Customer.password = undefined;
+
+      res.status(200).json({ message: "You have successfully logged in", Customer, token,details});
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: error.message });
