@@ -4,8 +4,8 @@ const { feedbackValid } = require("../validations.js");
 const feedbackController={
 getAllFeedbacks: async (req, res) => {
         try {
-          const feedback = await feedbacks.find();
-          res.status(200).json({ feedback });
+          const CfeeCdback = await feedbacks.find();
+          res.status(200).json({ CfeeCdback });
         } catch (error) {
           return res.status(500).json({ message: error.message });
         }
