@@ -3,9 +3,12 @@ const mongoose = require("mongoose");
 const feedBackSchema=new mongoose.Schema(
     
     {
-
-        fbMessage:{
-            type:String,
+        topic: {
+            type: String,
+            required: true,
+          },
+        mfeedback:{
+            type: String,
             require:true
         },
     }

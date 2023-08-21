@@ -13,10 +13,12 @@ getAllFeedbacks: async (req, res) => {
 
 Addfeedback: async (req, res) => {
         try {
-          const {fbMessage} = req.body;
-          const errorMessage = feedbackValid( fbMessage );
+          const mfeedback = req.body.mfeedback;
+          const topic = req.body.topic;
+          console.log(req.body);
+          const errorMessage = feedbackValid( mfeedback,topic );
           if (errorMessage) return res.status(400).json({ message: errorMessage });
-          await new feedbacks({  fbMessage }).save();
+          await new feedbacks({ mfeedback,topic }).save();
           res.status(201).json({
             message: "You have successfully Add FeddBack",
           });
