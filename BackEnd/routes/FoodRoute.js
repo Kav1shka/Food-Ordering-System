@@ -11,7 +11,7 @@ router.get("/foods/category/pastry", getAllFoods_Pastry);
 router.get("/foods/category/drinks", getAllFoods_Drinks);
 router.get("/foods/category/desserts", getAllFoods_Dessert);
 router.get("/food/_id", getFoodDetails);
-router.put("/food/:id", adminAuthMiddleware, updateFood);
-router.delete("/food/:id", adminAuthMiddleware, deleteFood);
+router.put("/food/put/_id", updateFood);
+router.delete("/food/delete/:id",deleteFood);
 
 module.exports= router;     
