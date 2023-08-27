@@ -6,19 +6,21 @@ const { findById } = require("../models/customer.js");
 const orderController = {
   makeOrder: async (req, res) => {
     try {
-      const { CustomerName, Email, foodName, KDU_ID,CustomerType ,quantity,paymentMethod,isPaid,paidAt,totalprice} = req.body;
+      const { itemList,CustomerName,Email, KDU_ID,totalprice,isPaid,paidAt,isPlaced } = req.body;
       const errorMessage = makeOrderErrorHandler(
+        itemList,
         CustomerName,
-        KDU_ID,
         Email,
-        foodName,
-        CustomerType,
+        KDU_ID,
+        //foodName,
+       // CustomerType,
         // foodCode,
         totalprice,
-        quantity,
-        paymentMethod,
+        //quantity,
+       // paymentMethod,
         isPaid,
-        paidAt
+        paidAt,
+        isPlaced
        
       );
       if (errorMessage) return res.status(400).json({ message: errorMessage });
@@ -27,7 +29,7 @@ const orderController = {
         return res
           .status(400)
           .json({ message: "wrong email address.Please retry" });
-      await new Orders({ CustomerName, Email, foodName, KDU_ID,CustomerType ,quantity,paymentMethod,isPaid,paidAt,totalprice }).save();
+      await new Orders({ itemList,CustomerName, Email,KDU_ID,totalprice,isPaid,paidAt,isPlaced }).save();
       res.status(201).json({
         message: "You have successfully placed order",
       });

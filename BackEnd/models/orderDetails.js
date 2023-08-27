@@ -9,22 +9,22 @@ const orderSchema = new mongoose.Schema(
 
     CustomerType:{
       type:String,
-      required:true,
+     // required:true,
     },
 
     Email: {
       type: String,
-      required: true,
+     // required: true,
     },
 
     foodName: {
       type: [],
-      required: true,
+      //required: true,
     },
 
     KDU_ID:{
       type:String,
-      required:true,
+      //required:true,
     },
 
     // Faculty: {
@@ -34,7 +34,7 @@ const orderSchema = new mongoose.Schema(
 
     paymentMethod:
     {type:String,
-      required:true
+      //required:true
     },
 
     itemsPrice:{
@@ -65,6 +65,10 @@ const orderSchema = new mongoose.Schema(
     paymentId:{
        type:String,
     },
+    itemList:{
+      type:[],
+      require:true,
+    }
  
   },
   { timestamps: true }
